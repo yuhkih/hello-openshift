@@ -9,7 +9,7 @@ docker build . -t hello-openshift:latest
 ## How to use
 ```
 $ docker run --rm  -p 80:8080 -d hello-openshift:latest
-$ curl http://localolhost 
+$ curl http://localhost 
 Hello OpenShift!
 $
 ```
