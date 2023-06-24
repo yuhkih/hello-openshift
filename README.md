@@ -1,4 +1,4 @@
-# hello-kubernetes
+# hello-openshift  
 Nginx test container based on UBI8
 
 ## How to build
