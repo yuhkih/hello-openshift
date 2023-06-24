@@ -1,0 +1,34 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"networking.k8s.io/v1","kind":"Ingress","metadata":{"annotations":{"kubernetes.io/ingress.class":"nginx"},"name":"test-ingress","namespace":"hello-openshift"},"spec":{"defaultBackend":{"service":{"name":"hello-openshift","port":{"number":8080}}},"rules":[{"host":"test.example.com","http":{"paths":[{"backend":{"service":{"name":"hello-openshift","port":{"number":8080}}},"path":"/","pathType":"Prefix"}]}}]}}
+    kubernetes.io/ingress.class: nginx
+  creationTimestamp: "2023-06-23T12:50:42Z"
+  generation: 1
+  name: test-ingress
+  namespace: hello-openshift
+  resourceVersion: "248361"
+  uid: ec9ec510-bd40-41ef-bfa9-1a3e3729ef93
+spec:
+  defaultBackend:
+    service:
+      name: hello-openshift
+      port:
+        number: 8080
+  rules:
+  - host: test.example.com
+    http:
+      paths:
+      - backend:
+          service:
+            name: hello-openshift
+            port:
+              number: 8080
+        path: /
+        pathType: Prefix
+status:
+  loadBalancer:
+    ingress:
+    - hostname: ab8becd0f4ea74fcf8c5a834274b5c86-1789665769.ap-northeast-1.elb.amazonaws.com

@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  creationTimestamp: "2023-06-24T02:27:16Z"
+  generation: 1
+  name: test-app2
+  namespace: test-app2
+  resourceVersion: "1111867"
+  uid: b636a888-7ae7-4fa0-addf-544c3f1812f3
+spec:
+  rules:
+  - host: app2.example.com
+    http:
+      paths:
+      - backend:
+          service:
+            name: hello-rosa
+            port:
+              number: 8080
+        path: /
+        pathType: Exact
+status:
+  loadBalancer: {}
